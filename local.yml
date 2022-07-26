@@ -4,6 +4,12 @@
   become: true # enable root
 
   tasks:
-  - name: install htop
+  - name: install packages
     package:
-      name: htop
+      name:
+        - htop
+        - tmux
+        - fzf
+        - vim
+        - git
+        - zsh
