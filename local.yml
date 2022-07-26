@@ -19,4 +19,12 @@
         - unzip
         - valgrind
         - vim
+        - wget
         - zsh
+
+  - name: copy .bashrc file
+    copy:
+      src: files/bashrc
+      dest: /home/{{user}}/.bashrc
+      group: {{user}}
+      owner: {{user}}
