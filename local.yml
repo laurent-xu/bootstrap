@@ -1,0 +1,9 @@
+---
+- hosts: localhost
+  connection: local
+  become: true # enable root
+
+  tasks:
+  - name: install htop
+    package:
+      name: htop
