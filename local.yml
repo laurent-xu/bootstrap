@@ -7,11 +7,16 @@
   - name: install packages
     package:
       name:
-        - htop
-        - tmux
-        - fzf
-        - vim
-        - git
-        - zsh
-        - terminator
         - chromium-browser
+        - fzf
+        - gdb
+        - git
+        - htop
+        - python3
+        - terminator
+        - tmux
+        - tree
+        - unzip
+        - valgrind
+        - vim
+        - zsh
