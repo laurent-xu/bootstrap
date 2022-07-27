@@ -24,8 +24,7 @@
 
   - name: Remove third parties packages
     apt:
-      pkg:
-        - unity-webapps-common
+      pkg: unity-webapps-common
       state: absent
       become: true
 
