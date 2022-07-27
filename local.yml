@@ -27,6 +27,11 @@
       pkg: unity-webapps-common
       state: absent
 
+  - name: Change shell
+    user:
+      name: '{{user}}'
+      shell: /usr/bin/zsh
+
   - name: copy .bashrc file
     copy:
       src: files/bashrc
