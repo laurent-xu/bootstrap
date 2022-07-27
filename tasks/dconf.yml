@@ -4,8 +4,6 @@
       package:
         name:
           - python3-psutil
-          - dbus-tool
-          - dbus-daemon
 
     - name: install extensions
       become: true
