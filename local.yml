@@ -26,5 +26,5 @@
     copy:
       src: files/bashrc
       dest: /home/{{user}}/.bashrc
-      group: {{user}}
-      owner: {{user}}
+      group: '{{user}}'
+      owner: '{{user}}'
