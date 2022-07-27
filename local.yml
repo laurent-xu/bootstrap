@@ -27,14 +27,10 @@
       pkg: unity-webapps-common
       state: absent
 
-  - name: Change shell
-    user:
-      name: '{{user}}'
-      shell: /usr/bin/zsh
+- include_tasks: tasks/install_zsh.yml
+  tags:
+    - shell
 
-  - name: copy .bashrc file
-    copy:
-      src: files/bashrc
-      dest: /home/{{user}}/.bashrc
-      group: '{{user}}'
-      owner: '{{user}}'
+- include_tasks: tasks/change_shell.yml
+  tags:
+    - shell

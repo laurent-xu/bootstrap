@@ -1,0 +1,19 @@
+---
+  - name: Change default shell to zsh
+    become: yes
+    user:
+      name: "{{ the_user }}"
+      shell: /bin/zsh
+    tags: shell
+ 
+ 
+  - name: /!\ End of playbook
+    pause: prompt="Press enter to kill session"
+    tags: shell
+ 
+ 
+  - name: Kill session
+    become: no
+    shell: 
+      cmd: pkill -u $USER
+    tags: shell
