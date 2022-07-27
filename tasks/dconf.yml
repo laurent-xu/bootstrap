@@ -4,7 +4,6 @@
       package:
         name:
           - python3-psutil
-          - dconf
           - dbus-tool
           - dbus-daemon
 
