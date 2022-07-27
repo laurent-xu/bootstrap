@@ -1,0 +1,47 @@
+---
+  - name: Install pre-requesite
+    become: yes
+    package:
+      name:
+        - python3-psutil
+        - dconf
+        - dbus-tool
+        - dbus-daemon
+
+    - name: install extensions
+      become: true
+      package:
+        name:
+          - gnome-shell-extension-windowoverlay-icons
+          - gnome-shell-extension-emoji-selector
+
+    - name: enable extensions
+      dconf:
+        key: "/org/gnome/shell/enabled-extensions"
+        value: "['windowoverlay-icons@sustmidown.centrum.cz', 'emoji-selector@maestroschan.fr']"
+
+    #############
+    # shortcuts #
+    #############
+
+    # There are many built-in shortcut actions that only require setting a
+    # binding to enable.
+
+    - name: file browser shortcut
+      dconf:
+        key: "/org/gnome/settings-daemon/plugins/media-keys/home"
+        value: "['<Super>f']"
+
+    - name: web browser shortcut
+      dconf:
+        key: "/org/gnome/settings-daemon/plugins/media-keys/www"
+        value: "['<Super>w']"
+
+    ###############
+    # Keybindings #
+    ###############
+    
+    - name: set xkb options
+      dconf:
+        key: "/org/gnome/desktop/input-sources/xkb-options"
+        value: "['caps:escape']"
