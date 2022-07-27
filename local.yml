@@ -8,6 +8,7 @@
     package:
       name:
         - chromium-browser
+        - curl
         - fzf
         - gdb
         - git
