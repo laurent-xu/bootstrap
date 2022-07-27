@@ -96,5 +96,5 @@
     lineinfile:
       path: ~/.tmux.conf
       regexp: "set-option -g default-shell"
-      line: "set-option -g default-shell /bin/usr/zsh"
+      line: "set-option -g default-shell /usr/bin/zsh"
       create: yes
