@@ -5,18 +5,6 @@
         name:
           - python3-psutil
 
-    - name: install extensions
-      become: true
-      package:
-        name:
-          - gnome-shell-extension-windowoverlay-icons
-          - gnome-shell-extension-emoji-selector
-
-    - name: enable extensions
-      dconf:
-        key: "/org/gnome/shell/enabled-extensions"
-        value: "['windowoverlay-icons@sustmidown.centrum.cz', 'emoji-selector@maestroschan.fr']"
-
     #############
     # shortcuts #
     #############
