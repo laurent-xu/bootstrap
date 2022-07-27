@@ -35,3 +35,5 @@
   - include_tasks: tasks/change_shell.yml
     tags:
       - shell
+
+  - include_tasks: tasks/dconf.yml
