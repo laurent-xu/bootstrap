@@ -1,12 +1,12 @@
 ---
-  - name: Install pre-requesite
-    become: yes
-    package:
-      name:
-        - python3-psutil
-        - dconf
-        - dbus-tool
-        - dbus-daemon
+    - name: Install pre-requesite
+      become: yes
+      package:
+        name:
+          - python3-psutil
+          - dconf
+          - dbus-tool
+          - dbus-daemon
 
     - name: install extensions
       become: true
