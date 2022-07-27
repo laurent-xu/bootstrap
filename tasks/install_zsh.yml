@@ -20,6 +20,10 @@
       state: directory
       mode: 0755
     tags: dir
+
+  - name: .zshrc and .bashrc creation
+    become: no
+    shell: touch ~/.bashrc ~/.zshrc
  
   - name: clone autosuggestion
     become: no
@@ -38,7 +42,7 @@
  
  
 ## Personnalisation de .zshrc
-  - name: Remplacement d'information dans le fichier ~/.zshrc
+  - name: Edit ~/.zshrc
     become: no
     lineinfile:
       path: ~/.zshrc
@@ -70,7 +74,7 @@
       - 'export HISTSIZE=100000'
     tags: personnalisation
  
-  - name: Ajout d'information dans le fichier ~/.bashrc
+  - name: Edit bashrc
     become: no
     lineinfile:
       path: ~/.bashrc
