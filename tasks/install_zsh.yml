@@ -49,6 +49,7 @@
       path: ~/.zshrc
       regexp: "{{ item.regexp }}"
       line: "{{ item.line }}"
+      create: yes
     with_items:
     - { regexp: 'ZSH_THEME="robbyrussell"', line: 'ZSH_THEME="agnoster"' }
     - { regexp: 'plugins=\(git\)', line: 'plugins=(git colored-man-pages ansible cp sudo yum)' }
@@ -81,6 +82,7 @@
       path: ~/.bashrc
       insertafter: 'HIST_STAMPS="yyyy-mm-dd'
       line: "{{ item }}"
+      create: yes
     with_items:
       - '#sources'
       - 'source ~/.oh-my-zsh/oh-my-zsh.sh'
@@ -95,6 +97,7 @@
       path: ~/.tmux.conf
       regexp: "set-option -g default-shell"
       line: "set-option -g default-shell /bin/usr/zsh"
+      create: yes
 
  
   - name: session preparation to use zsh 
