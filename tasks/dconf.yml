@@ -13,11 +13,13 @@
     # binding to enable.
 
     - name: file browser shortcut
+      become: false
       dconf:
         key: "/org/gnome/settings-daemon/plugins/media-keys/home"
         value: "['<Super>f']"
 
     - name: web browser shortcut
+      become: false
       dconf:
         key: "/org/gnome/settings-daemon/plugins/media-keys/www"
         value: "['<Super>w']"
@@ -27,6 +29,7 @@
     ###############
     
     - name: set xkb options
+      become: false
       dconf:
         key: "/org/gnome/desktop/input-sources/xkb-options"
         value: "['caps:escape']"
