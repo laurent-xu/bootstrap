@@ -98,13 +98,3 @@
       regexp: "set-option -g default-shell"
       line: "set-option -g default-shell /bin/usr/zsh"
       create: yes
-
- 
-  - name: session preparation to use zsh 
-    become: no
-    vars:
-      the_user: "{{ ansible_user_id }}"
-    user:
-      name: "{{ the_user }}"
-      shell: /bin/usr/zsh
-    tags: shell
