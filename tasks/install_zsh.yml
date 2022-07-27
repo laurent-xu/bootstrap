@@ -88,6 +88,13 @@
       - 'source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh'
     tags: personnalisation
  
+  - name: Edit tmux default shell
+    become: no
+    lineinfile:
+      path: ~/.tmux.conf
+      regexp: "set-option -g default-shell"
+      line: "set-option -g default-shell /bin/usr/zsh"
+
  
   - name: session preparation to use zsh 
     become: no
