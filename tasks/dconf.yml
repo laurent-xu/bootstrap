@@ -33,3 +33,37 @@
       dconf:
         key: "/org/gnome/desktop/input-sources/xkb-options"
         value: "['caps:escape']"
+
+    #####################
+    # terminal settings #
+    #####################
+
+    - name: terminal bell
+      dconf:
+        key: "/org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/audible-bell"
+        value: "false"
+
+    - name: terminal transparency
+      dconf:
+        key: "/org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/use-transparent-background"
+        value: "true"
+
+    - name: terminal transparency percentage
+      dconf:
+        key: "/org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/background-transparency-percent"
+        value: "5"
+
+    - name: terminal bright bold
+      dconf:
+        key: "/org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/bold-is-bright"
+        value: "true"
+
+    - name: terminal scrollback lines
+      dconf:
+        key: "/org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/scrollback-lines"
+        value: "1000000"
+
+    - name: terminal find shortcut
+      dconf:
+        key: "/org/gnome/terminal/legacy/keybindings/find"
+        value: "'<Control>f'"
