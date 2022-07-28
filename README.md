@@ -3,6 +3,6 @@
 Run bootsrap.sh or
 
 ```
-sh -c "$(wget -O- https://github.com/laurent-xu/bootstrap/blob/main/bootstrap.sh)"
+sh -c "$(wget -O- https://raw.githubusercontent.com/laurent-xu/bootstrap/main/bootstrap.sh)"
 ```
 
