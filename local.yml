@@ -15,6 +15,7 @@
         - git
         - htop
         - moreutils
+        - openssh-server
         - python3
         - terminator
         - tmux
