@@ -37,3 +37,5 @@
       - shell
 
   - include_tasks: tasks/dconf.yml
+
+  - include_tasks: tasks/ansible-cron.yml
