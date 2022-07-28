@@ -3,6 +3,6 @@
     become: yes
     user:
       name:  "{{ansible_user_id}}"
-      shell: /bin/zsh
+      shell: /usr/bin/zsh
     tags: shell
  

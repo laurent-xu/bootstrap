@@ -1,10 +1,11 @@
 ---
 - hosts: localhost
   connection: local
-  become: true # enable root
+  become: false 
 
   tasks:
   - name: install packages
+    become: true
     package:
       name:
         - chromium-browser
@@ -24,6 +25,7 @@
         - zsh
 
   - name: Remove third parties packages
+    become: true
     apt:
       pkg: unity-webapps-common
       state: absent
