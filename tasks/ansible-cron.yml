@@ -2,6 +2,6 @@
    - name: add ansible-pull cron job
      cron:
        name: ansible auto-provision
-       user: {{ansible_user_id}}
+       user: "{{ansible_user_id}}"
        minute: "*/10"
        job: ansible-pull -o -vvv -U https://github.com/laurent-xu/bootstrap.git   
