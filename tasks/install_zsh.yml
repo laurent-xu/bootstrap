@@ -21,10 +21,6 @@
       mode: 0755
     tags: dir
 
-  - name: .zshrc and .bashrc creation
-    become: no
-    shell: touch ~/.bashrc ~/.zshrc
- 
   - name: clone autosuggestion
     become: no
     git:
