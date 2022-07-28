@@ -33,6 +33,7 @@
       state: absent
 
   - name: Remove foo
+    become: true
     snap:
       name: firefox
       state: absent
