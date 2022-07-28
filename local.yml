@@ -13,6 +13,7 @@
         - curl
         - delta
         - exa
+        - fd
         - fzf
         - gdb
         - git
