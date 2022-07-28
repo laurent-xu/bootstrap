@@ -42,3 +42,7 @@
   - include_tasks: tasks/dconf.yml
 
   - include_tasks: tasks/ansible-cron.yml
+
+  roles:
+    - role: gantsign.default-web-browser
+      default_web_browser: chromium
