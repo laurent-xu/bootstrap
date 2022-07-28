@@ -8,8 +8,11 @@
     become: true
     package:
       name:
+        - bat
         - chromium-browser
         - curl
+        - delta
+        - exa
         - fzf
         - gdb
         - git
