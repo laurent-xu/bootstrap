@@ -11,4 +11,4 @@
        user: "ansible"
        minute: "*/10"
        # sudo su -c is not passwordless while sudo su processing stdin can be. That's why we first write the command in a file and then redirect the file to stdin
-       job: echo 'tail -n 1000 ~/log/ansible-cron | sponge ~/log/ansible-cron; ansible-pull -o -vvv -U https://github.com/laurent-xu/bootstrap.git | ts "[%Y-%m-%d %H:%M:%S]" >> ~/log/ansible-cron 2>&1' > ~/ansible-cron.sh && sudo su {{ansible_user_id}} < ~/ansible-cron.sh
+       job: echo 'tail -n 1000 ~/log/ansible-cron | sponge ~/log/ansible-cron; ansible-pull -o -vvv -U https://github.com/laurent-xu/bootstrap.git | ts "[\%Y-\%m-\%d \%H:\%M:\%S]" >> ~/log/ansible-cron 2>&1' > ~/ansible-cron.sh && sudo su {{ansible_user_id}} < ~/ansible-cron.sh
