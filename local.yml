@@ -6,8 +6,8 @@
   pre_tasks:
   - name: update repositories
     apt: update_cache=yes
-    changed_when: False
-    become: false 
+    changed_when: false
+    become: true 
 
   tasks:
   - name: install packages
