@@ -10,10 +10,10 @@
       name:
         - bat
         - chromium-browser
+        - cargo
         - curl
         - delta
-        - exa
-        - fd
+        - fd-find
         - fzf
         - gdb
         - git
@@ -36,11 +36,17 @@
       pkg: unity-webapps-common
       state: absent
 
-  - name: Remove foo
+  - name: Remove firefox
     become: true
     snap:
       name: firefox
       state: absent
+
+  - name: Installl exa 
+    become: no
+    shell:
+      cmd: cargo install exa 
+      creates: "~/.cargo/bin/exa"
 
   - include_tasks: tasks/install_zsh.yml
     tags:

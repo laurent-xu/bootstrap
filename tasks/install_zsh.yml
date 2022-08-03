@@ -70,6 +70,10 @@
       - '# History limit'
       - 'export HISTFILESIZE=200000'
       - 'export HISTSIZE=100000'
+      - 'alias ll="exa -laF --git --header"'
+      - 'alias ls="exa"'
+      - 'alias cat="batcat -p"'
+      - 'alias bat="batcat"'
     tags: personnalisation
  
   - name: Edit bashrc

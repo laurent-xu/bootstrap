@@ -1,0 +1,5 @@
+* Generate ssh keys
+* Install vscode
+  * Configure vscode
+* Configure vim
+* Add this bootstrap playbook in sudoer file so cron can run without issues
