@@ -56,7 +56,7 @@
     become: no
     lineinfile:
       path: ~/.zshrc
-      insertafter: 'HIST_STAMPS="yyyy-mm-dd'
+      insertafter: 'source $ZSH/oh-my-zsh.sh'
       line: "{{ item }}"
     with_items:
       - "export EDITOR='vim'"
