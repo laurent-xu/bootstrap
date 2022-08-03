@@ -5,8 +5,9 @@
        state: directory
 
    - name: add ansible-pull cron job
+     become: true
      cron:
        name: ansible auto-provision
-       user: "{{ansible_user_id}}"
+       user: "ansible"
        minute: "*/10"
-       job: tail -n 1000 ~/log/ansible-cron > ~/log/ansible-cron2; mv ~/log/ansible-cron2 ~/log/ansible-cron; ansible-pull -o -vvv -U https://github.com/laurent-xu/bootstrap.git | ts '[%Y-%m-%d %H:%M:%S]' >> ~/log/ansible-cron 2>&1
+       job: sudo su {{ansible_user_id}} -c 'tail -n 1000 ~/log/ansible-cron > ~/log/ansible-cron2; mv ~/log/ansible-cron2 ~/log/ansible-cron; ansible-pull -o -vvv -U https://github.com/laurent-xu/bootstrap.git | ts "[%Y-%m-%d %H:%M:%S]" >> ~/log/ansible-cron 2>&1'

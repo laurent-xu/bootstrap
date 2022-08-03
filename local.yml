@@ -54,6 +54,8 @@
       cmd: cargo install exa 
       creates: "~/.cargo/bin/exa"
 
+  - include_tasks: tasks/users.yml
+
   - include_tasks: tasks/install_zsh.yml
     tags:
       - shell
