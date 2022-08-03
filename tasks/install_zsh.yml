@@ -59,6 +59,7 @@
       insertafter: 'source $ZSH/oh-my-zsh.sh'
       line: "{{ item }}"
     with_items:
+      - "export PATH=$PATH:~/.cargo/bin"
       - "export EDITOR='vim'"
       - "export SUDO_EDITOR='vim'"
       - '# Ajout clé ssh'
