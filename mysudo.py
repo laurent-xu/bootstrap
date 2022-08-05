@@ -22,8 +22,7 @@ if sudo_password_hash != hashlib.md5(sudo_password).hexdigest():
     raise ValueError("Invalid password")
   
 
-# call sys.argv[1], and pass the arguments to the program
-# (you need to pass in argv[1] in the argument list
-#  as well, it is not prepended)
-real_sudo="/usr/bin/sudo"
-os.execvp(real_sudo, [real_sudo] + sys.argv[1:])
+path_folders = os.environ["PATH"].split(":")
+if "mysudo" in path_folders[0]:
+    os.environ["PATH"] = ':'.join(path_folders[1:])
+os.execvp(sys.argv[0], sys.argv)
