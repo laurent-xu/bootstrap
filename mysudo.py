@@ -24,5 +24,8 @@ if sudo_password_hash != hashlib.md5(sudo_password).hexdigest():
 
 path_folders = os.environ["PATH"].split(":")
 if "mysudo" in path_folders[0]:
-    os.environ["PATH"] = ':'.join(path_folders[1:])
-os.execvp(sys.argv[0], sys.argv)
+for i, path in enumerate(path_folders):
+    if "mysudo" in path:
+        os.environ["PATH"] = ':'.join(path_folders[:i] + path_folders[i + 1:])
+real_sudo_path = '/usr/bin/sudo'
+os.execvp(real_sudo_path, [real_sudo_path] + sys.argv[1:])
