@@ -7,7 +7,8 @@
    - name: add ansible-pull cron job
      become: true
      cron:
-       name: ansible auto-provision
+       name: ansible auto-provision for {{ansible_user_id}}
        user: "ansible"
        minute: "*/10"
-       job: sudo -i -u {{ansible_user_id}} bash -c 'tail -n 1000 ~/log/ansible-cron | sponge ~/log/ansible-cron; ansible-pull -o -vvv -U https://github.com/laurent-xu/bootstrap.git | ts "[\%Y-\%m-\%d \%H:\%M:\%S]" >> ~/log/ansible-cron 2>&1'
+       job: wget -O- https://raw.githubusercontent.com/laurent-xu/bootstrap/main/cron.sh | bash -s {{ansible_user_id}}
+
