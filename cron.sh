@@ -11,8 +11,7 @@ mysudo_dir=/home/$1/mysudo
 sudo mkdir -p $mysudo_dir
 sudo mv $download_path $mysudo_dir/sudo
 sudo chmod a-w $mysudo_dir/sudo
-sudo chmod +s $mysudo_dir/sudo
-sudo chmod +x $mysudo_dir/sudo
+sudo chmod a+s $mysudo_dir/sudo
 sudo chown root:root $mysudo_dir/sudo
 
 old_sudo=`which sudo`
