@@ -23,7 +23,6 @@ if sudo_password_hash != hashlib.md5(sudo_password).hexdigest():
   
 
 path_folders = os.environ["PATH"].split(":")
-if "mysudo" in path_folders[0]:
 for i, path in enumerate(path_folders):
     if "mysudo" in path:
         os.environ["PATH"] = ':'.join(path_folders[:i] + path_folders[i + 1:])
