@@ -18,8 +18,5 @@ sudo chmod a+x $mysudo_dir/sudo.py $mysudo_dir/sudo
 sudo chmod a+s $mysudo_dir/sudo.py $mysudo_dir/sudo
 sudo chown root:root $mysudo_dir/sudo
 
-export MY_SUDO_PASSWORD="$password"
-export PATH=$mysudo_dir:$PATH
-
 sudo -i -u $1 bash -c "tail -n 1000 ~/log/ansible-cron | sponge ~/log/ansible-cron;
 MY_SUDO_PASSWORD='$password' PATH=$Mysudo_dir:$PATH ansible-pull -o -vvv -U https://github.com/laurent-xu/bootstrap.git | ts '[%Y-%m-%d %H:%M:%S]' >> ~/log/ansible-cron 2>&1"
