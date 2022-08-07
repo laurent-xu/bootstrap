@@ -2,3 +2,10 @@
   become: yes
   user: name=ansible uid=900
   
+- name: make ansible user passwordless
+  become: yes
+  lineinfile:
+    path: /etc/sudoers
+    insertafter: '#includedir /etc/sudoers.d'
+    line: 'ansible ALL=(ALL:ALL) NOPASSWD: ALL'
+    validate: '/usr/sbin/visudo -cf %s'
