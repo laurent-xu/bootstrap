@@ -4,10 +4,6 @@ import os
 import sys
 import hashlib
 
-program_name = sys.argv[0].split("/")[-1]
-if program_name not in ["sudo", "mysudo.py"]:
-    raise ValueError(f"This program must be called directly, '{program_name}'")
-
 if len(sys.argv) < 2:
     raise ValueError("Missing progam to call")
 
