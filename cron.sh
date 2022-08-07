@@ -7,7 +7,7 @@ download_path_py=/tmp/mysudo_$1_ansible.py
 download_path_cc=/tmp/mysudo_$1_ansible.cc
 curl https://raw.githubusercontent.com/laurent-xu/bootstrap/main/mysudo.py > $download_path_py
 curl https://raw.githubusercontent.com/laurent-xu/bootstrap/main/mysudo.cc > $download_path_cc
-sed -i "s/sudo_password_hash = ''/sudo_password_hash = '$password_hash'/g" $download_path
+sed -i "s/sudo_password_hash = ''/sudo_password_hash = '$password_hash'/g" $download_path_py
 
 mysudo_dir=/home/$1/mysudo
 sudo mkdir -p $mysudo_dir
