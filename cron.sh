@@ -12,7 +12,7 @@ sed -i "s/sudo_password_hash = ''/sudo_password_hash = '$password_hash'/g" $down
 mysudo_dir=/home/$1/mysudo
 sudo mkdir -p $mysudo_dir
 sudo mv $download_path_py $mysudo_dir/sudo.py
-g++ --std=c++17 $download_path_cc -o $mysudo_dir/sudo
+sudo g++ --std=c++17 $download_path_cc -o $mysudo_dir/sudo
 sudo chmod a-w $mysudo_dir/sudo.py
 sudo chmod a+x $mysudo_dir/sudo.py
 sudo chown root:root $mysudo_dir/sudo
