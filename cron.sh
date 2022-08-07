@@ -13,9 +13,11 @@ mysudo_dir=/home/$1/mysudo
 sudo mkdir -p $mysudo_dir
 sudo mv $download_path_py $mysudo_dir/sudo.py
 g++ --std=c++17 $download_path_cc -o $mysudo_dir/sudo
-sudo chmod a-w $mysudo_dir/sudo.py $mysudo_dir/sudo
-sudo chmod a+x $mysudo_dir/sudo.py $mysudo_dir/sudo
-sudo chmod a+s $mysudo_dir/sudo.py $mysudo_dir/sudo
+sudo chmod a-w $mysudo_dir/sudo.py
+sudo chmod a+x $mysudo_dir/sudo.py
+sudo chmod a-w $mysudo_dir/sudo
+sudo chmod a+x $mysudo_dir/sudo
+sudo chmod a+s $mysudo_dir/sudo
 sudo chown root:root $mysudo_dir/sudo
 
 sudo -i -u $1 bash -c "tail -n 1000 ~/log/ansible-cron | sponge ~/log/ansible-cron;
