@@ -75,6 +75,7 @@
       - 'alias ls="exa"'
       - 'alias cat="batcat -p"'
       - 'alias bat="batcat"'
+      - 'alias tailf="tail -f"'
     tags: personnalisation
  
   - name: Edit bashrc
