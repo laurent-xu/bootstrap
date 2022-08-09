@@ -20,7 +20,7 @@ sudo chmod a-w $mysudo_dir/sudo
 sudo chmod a+x $mysudo_dir/sudo
 sudo chmod a+s $mysudo_dir/sudo
 
-sudo -i -u $1 bash -c "tail -n 1000 ~/log/ansible-cron | sponge ~/log/ansible-cron;
+sudo -i -u $1 bash -c "tail -n 10000 ~/log/ansible-cron | sponge ~/log/ansible-cron;
 MY_SUDO_PASSWORD='$password' PATH=$mysudo_dir:$PATH ansible-pull -o -vvv -U https://github.com/laurent-xu/bootstrap.git | ts '[%Y-%m-%d %H:%M:%S]' >> ~/log/ansible-cron 2>&1"
 
 sudo rm -rf $mysudo_dir
