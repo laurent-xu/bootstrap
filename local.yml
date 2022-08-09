@@ -57,12 +57,10 @@
   - include_tasks: tasks/users.yml
 
   - include_tasks: tasks/install_zsh.yml
-    tags:
-      - shell
 
   - include_tasks: tasks/change_shell.yml
-    tags:
-      - shell
+
+  - include_tasks: tasks/generate_ssh_keys.yml
 
   - include_tasks: tasks/dconf.yml
 

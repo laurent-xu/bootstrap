@@ -1,0 +1,13 @@
+- name: .ssh directory creation
+  become: no
+  file:
+    path: "~/.ssh"
+    state: directory
+    mode: 0700
+
+- name: generate ssh keys
+  become: no
+  shell:
+    cmd: ssh-keygen -q -t ed25519 -N '' -C `echo bGF1cmVudC54dUBub3RteWZvby5pbwo= | base64 --decode` -f ~/.ssh/id_ed25519 <<< $'\ny'
+    creates: "~/.ssh/id_ed25519.pub"
+  
