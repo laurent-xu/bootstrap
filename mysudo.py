@@ -13,7 +13,7 @@ sudo_password_hash = ''
 if sudo_password is None:
     raise ValueError("MY_SUDO_PASSWORD env variable is not set")
 
-if sudo_password_hash != hashlib.md5(sudo_password).hexdigest():
+if sudo_password_hash != hashlib.sha256(sudo_password).hexdigest():
     raise ValueError("Invalid password")
   
 

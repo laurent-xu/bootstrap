@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
 password=$(uuidgen)
-password_hash=`echo -n "$password" | md5sum | cut -d' ' -f1`
+password_hash=`echo -n "$password" | sha256sum | cut -d' ' -f1`
 
 download_path_py=~/mysudo_$1_ansible.py
 download_path_cc=~/mysudo_$1_ansible.cc
