@@ -32,7 +32,7 @@
         - tree
         - unzip
         - valgrind
-        - vim
+        - vim-nox
         - wget
         - zsh
 
