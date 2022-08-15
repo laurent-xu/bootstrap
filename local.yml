@@ -23,7 +23,7 @@
         - chromium-browser
         - cargo
         - curl
-        - dconf-editor
+        - dconf-cli
         - delta
         - fail2ban
         - fd-find
