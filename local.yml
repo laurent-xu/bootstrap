@@ -60,6 +60,8 @@
 
   - include_tasks: tasks/change_shell.yml
 
+  - include_tasks: tasks/vim.yml
+
   - include_tasks: tasks/generate_ssh_keys.yml
 
   - include_tasks: tasks/dconf.yml
