@@ -75,6 +75,7 @@
       - 'alias cat="batcat -p"'
       - 'alias bat="batcat"'
       - 'alias tailf="tail -f"'
+      - 'alias notmyfoo="ssh l@notmyfoo.io"'
       - 'set -o vi'
     tags: personnalisation
 
