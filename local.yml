@@ -9,6 +9,13 @@
     changed_when: false
     become: true
 
+  - name: home directory creation
+    become: no
+    file:
+      path: "~"
+      state: directory
+      mode: 0751
+
   tasks:
   - name: Upgrading all packages (Ubuntu/Debian)
     become: true

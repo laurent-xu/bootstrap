@@ -3,7 +3,13 @@ This playbook also installs a cron to keep all my devices up to date and in sync
 
 # Ubuntu
 
+If setting up a VPS you should first run
 ```
+useradd l
+passwd l
+su l
+```
+
 sh -c "$(wget -O- https://raw.githubusercontent.com/laurent-xu/bootstrap/main/bootstrap.sh)"
 ```
 
