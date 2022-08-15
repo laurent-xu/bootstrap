@@ -76,6 +76,7 @@
       - 'alias cat="batcat -p"'
       - 'alias bat="batcat"'
       - 'alias tailf="tail -f"'
+      - 'set -o vi'
     tags: personnalisation
  
   - name: Edit bashrc
