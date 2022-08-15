@@ -47,3 +47,4 @@ noremap <Right> <Nop>
 
 set number
 set tabstop=4 softtabstop=0 expandtab shiftwidth=4
+set listchars=tab:>.,trail:.,extends:\#,nbsp:.
