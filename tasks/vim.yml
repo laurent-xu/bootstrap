@@ -3,7 +3,7 @@
   copy:
     src: 'files/vimrc'
     dest: '/home/{{ ansible_user_id }}/.vimrc'
-  register: vimrc_copy 
+  register: vimrc_copy
 
 - name: install vim plugin handler
   git:
@@ -11,5 +11,10 @@
     dest: '/home/{{ ansible_user_id }}/.vim/bundle/Vundle.vim'
 
 - name: install vim plugins
-  shell: vim +PluginInstall +qall 
+  shell: vim +PluginInstall +qall
+  when: vimrc_copy.changed
+
+
+- name: build command+t for vim
+  shell:  cd ~/.vim/bundle/command-t/ruby/command-t/ext/command-t; ruby extconf.rb; make 
   when: vimrc_copy.changed

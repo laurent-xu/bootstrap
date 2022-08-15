@@ -27,6 +27,7 @@
         - moreutils
         - openssh-server
         - python3
+        - ruby-dev
         - terminator
         - tmux
         - tree
