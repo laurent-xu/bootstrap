@@ -5,9 +5,9 @@ password_hash=`echo -n "$password" | sha256sum | cut -d' ' -f1`
 
 download_path_py=~/mysudo_$1_ansible.py
 download_path_cc=~/mysudo_$1_ansible.cc
-curl https://raw.githubusercontent.com/laurent-xu/bootstrap/main/mysudo.py > $download_path_py
-curl https://raw.githubusercontent.com/laurent-xu/bootstrap/main/mysudo.cc > $download_path_cc
-sed -i "s/sudo_password_hash = ''/sudo_password_hash = '$password_hash'/g" $download_path_py
+sudo curl https://raw.githubusercontent.com/laurent-xu/bootstrap/main/mysudo.py > $download_path_py
+sudo curl https://raw.githubusercontent.com/laurent-xu/bootstrap/main/mysudo.cc > $download_path_cc
+sudo sed -i "s/sudo_password_hash = ''/sudo_password_hash = '$password_hash'/g" $download_path_py
 
 mysudo_dir=/home/$1/mysudo
 sudo mkdir -p $mysudo_dir
