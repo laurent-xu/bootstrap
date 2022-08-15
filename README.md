@@ -19,4 +19,5 @@ Open browser command+alt+w
 ```
 :G blame
 :StripWhitespace
+comma+t to fuzzy search a file
 ```
