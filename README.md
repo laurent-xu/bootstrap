@@ -7,3 +7,16 @@ This playbook also installs a cron to keep all my devices up to date and in sync
 sh -c "$(wget -O- https://raw.githubusercontent.com/laurent-xu/bootstrap/main/bootstrap.sh)"
 ```
 
+# Useful shortcuts
+
+## Global
+```
+Open terminal command+alt+T
+Open browser command+alt+w
+```
+
+## vim
+```
+:G blame
+:StripWhitespace
+```
