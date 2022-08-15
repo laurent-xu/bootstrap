@@ -10,6 +10,11 @@
     become: true
 
   tasks:
+  - name: Upgrading all packages (Ubuntu/Debian)
+    become: true
+    apt:
+      upgrade: dist
+
   - name: install packages
     become: true
     package:
@@ -19,12 +24,16 @@
         - cargo
         - curl
         - delta
+        - fail2ban
         - fd-find
         - fzf
         - gdb
         - git
         - htop
+        - iptables
+        - iptables-persistent
         - moreutils
+        - netfilter-persistent
         - openssh-server
         - python3
         - ruby-dev
@@ -32,11 +41,13 @@
         - terminator
         - tmux
         - tree
+        - unattended-upgrades
         - unzip
         - valgrind
         - vim-nox
         - wget
         - zsh
+      state: latest
 
   - name: Remove third parties packages
     become: true
@@ -65,6 +76,14 @@
   - include_tasks: tasks/vim.yml
 
   - include_tasks: tasks/generate_ssh_keys.yml
+
+  - include_tasks: tasks/sshd.yml
+
+  - include_tasks: tasks/iptables.yml
+
+  - include_tasks: tasks/fail2ban.yml
+
+  - include_tasks: tasks/unattended-upgrades.yml
 
   - include_tasks: tasks/dconf.yml
 

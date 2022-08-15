@@ -1,7 +1,32 @@
 - name: create ansible user
   become: yes
   user: name=ansible uid=900
-  
+
+- name: Ensure wheel group is present
+  become: yes
+  group:
+    name: wheel
+    state: present
+
+- name: Ensure wheel group has sudo privileges
+  become: yes
+  lineinfile:
+    dest: /etc/sudoers
+    state: present
+    regexp: "^%wheel"
+    line: "%wheel ALL=(ALL:ALL) ALL"
+    validate: "/usr/sbin/visudo -cf %s"
+
+- name: Create the non-root user account
+  become: yes
+  user:
+    name: "l"
+    password: ""
+    shell: /usr/bin/zsh
+    update_password: on_create
+    groups: wheel
+    append: yes
+
 - name: make ansible user passwordless
   become: yes
   lineinfile:
