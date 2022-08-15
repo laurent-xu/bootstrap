@@ -1,9 +1,4 @@
 ---
-- name: Flush existing firewall rules
-  become: yes
-  iptables:
-    flush: true
-
 - name: Firewall rule - allow all loopback traffic
   become: yes
   iptables:

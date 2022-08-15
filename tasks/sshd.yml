@@ -25,6 +25,7 @@
       line: "UseDNS no"
     - regexp: "^#?AllowAgentForwarding"
       line: "AllowAgentForwarding no"
+  register: sshd_config
 
 - name: Restart sshd
   become: yes
@@ -32,3 +33,4 @@
     state: restarted
     daemon_reload: yes
     name: sshd
+  when: sshd_config.changed
