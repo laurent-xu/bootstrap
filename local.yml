@@ -1,13 +1,13 @@
 ---
 - hosts: localhost
   connection: local
-  become: false 
+  become: false
 
   pre_tasks:
   - name: update repositories
     apt: update_cache=yes
     changed_when: false
-    become: true 
+    become: true
 
   tasks:
   - name: install packages
@@ -49,10 +49,10 @@
       name: firefox
       state: absent
 
-  - name: Installl exa 
+  - name: Installl exa
     become: no
     shell:
-      cmd: cargo install exa 
+      cmd: cargo install exa
       creates: "~/.cargo/bin/exa"
 
   - include_tasks: tasks/users.yml
