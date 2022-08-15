@@ -3,17 +3,13 @@
   copy:
     src: 'files/vimrc'
     dest: '/home/{{ ansible_user_id }}/.vimrc'
+  register: vimrc_copy 
 
 - name: install vim plugin handler
   git:
     repo: 'https://github.com/VundleVim/Vundle.vim.git'
-    dest: '/home/{{ item }}/.vim/bundle/Vundle.vim'
+    dest: '/home/{{ ansible_user_id }}/.vim/bundle/Vundle.vim'
 
 - name: install vim plugins
-  shell: >
-    echo -ne '\n' | vim -E -s -c "source ~/.vimrc" -c PluginInstall -c qa            
-  register: resultvim
-  failed_when: ( result.rc not in [0,1] )
-
-- debug:
-  msg: "{{ resultvim }}"
+  shell: vim +PluginInstall +qall 
+  when: vimrc_copy.changed
