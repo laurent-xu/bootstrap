@@ -1,7 +1,16 @@
-This project set up a newly bought device ready to be used for all my development work.
-This playbook also installs a cron to keep all my devices up to date and in sync with this repo
+This project set up a newly bought device ready to be used for all my development work. This will configure
+* some key bindings
+* vim
+* tmux
+* shell
+* git
 
 # Ubuntu
+
+The following provisions the current user and then install a cron to keep the settings up to date
+```
+sh -c "$(wget -O- https://raw.githubusercontent.com/laurent-xu/bootstrap/main/bootstrap.sh)"
+```
 
 If setting up a VPS you should first run
 ```
@@ -10,9 +19,6 @@ passwd l
 su l
 ```
 
-```
-sh -c "$(wget -O- https://raw.githubusercontent.com/laurent-xu/bootstrap/main/bootstrap.sh)"
-```
 
 # Useful shortcuts
 
