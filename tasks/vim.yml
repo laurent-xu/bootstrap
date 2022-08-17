@@ -2,7 +2,7 @@
 - name: copy .vimrc
   copy:
     src: 'files/vimrc'
-    dest: '/$HOME/.vimrc'
+    dest: '~/.vimrc'
   register: vimrc_copy
 
 - name: install vim plugin handler

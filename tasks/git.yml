@@ -1,0 +1,6 @@
+---
+- name: copy .gitconfig
+  copy:
+    src: 'files/gitconfig'
+    dest: '~/.gitconfig'
+
