@@ -10,6 +10,7 @@ passwd l
 su l
 ```
 
+```
 sh -c "$(wget -O- https://raw.githubusercontent.com/laurent-xu/bootstrap/main/bootstrap.sh)"
 ```
 
