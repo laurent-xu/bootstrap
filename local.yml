@@ -40,6 +40,7 @@
         - gdb
         - git
         - htop
+        - hugo
         - iptables
         - iptables-persistent
         - make
